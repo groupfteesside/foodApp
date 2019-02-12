@@ -5,6 +5,8 @@
  */
 package objects;
 
+import static objects.SR28Helper.trimField;
+
 /**
  * @author 
  */
@@ -16,15 +18,16 @@ public class Item
         group number
         long description
         short description
-        common name
         manufacturer
+    from NUT_DATA.txt
+        
     */
     
-    private int id;
-    private FoodGroup group;
-    private String longDesc;
-    private String shortDesc;
-    private String manufacturer;
+    private final int id;
+    private final FoodGroup group;
+    private final String longDesc;
+    private final String shortDesc;
+    private final String manufacturer;
 
     public int getId() {
         return id;
@@ -52,19 +55,12 @@ public class Item
         String[] splitLine = lineIn.split("\\^");
         id = Integer.parseInt(trimField(splitLine[0]));
         int groupId = Integer.parseInt(trimField(splitLine[1]));
+        group = null;
         /*
         TODO: use groupId to find and set FoodGroup object
         */
         longDesc = trimField(splitLine[2]);
         shortDesc = trimField(splitLine[3]);
         manufacturer = trimField(splitLine[5]);
-    }
-    
-    // Returns string with first and last characters removed
-    // To help with those bloody annoying tildes
-    private String trimField(String s)
-    {
-        if (s.length() > 2) return s.substring(1, s.length()-1);
-        else return "";
     }
 }
