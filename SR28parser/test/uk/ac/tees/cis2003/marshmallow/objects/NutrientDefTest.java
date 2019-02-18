@@ -5,7 +5,7 @@
  */
 package uk.ac.tees.cis2003.marshmallow.objects;
 
-import uk.ac.tees.cis2003.marshmallow.objects.Nutrient;
+import uk.ac.tees.cis2003.marshmallow.objects.NutrientDef;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,17 +17,17 @@ import static org.junit.Assert.*;
  *
  * @author s6115598
  */
-public class NutrientTest {
+public class NutrientDefTest {
     
-    private static Nutrient testNutrient;
+    private static NutrientDef testNutrient;
     
-    public NutrientTest() {
+    public NutrientDefTest() {
     }
     
     @BeforeClass
     public static void setUpClass() 
     {
-        testNutrient = new Nutrient("~100~^~g~^~TST~^~Test Nutrient~^~1~^~234~");
+        testNutrient = new NutrientDef("~100~^~g~^~TST~^~Test Nutrient~^~1~^~234~");
     }
     
     @AfterClass

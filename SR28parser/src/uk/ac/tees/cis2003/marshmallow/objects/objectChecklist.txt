@@ -1,11 +1,11 @@
-DONE
+DONE - or, at least, "done" enough for our purposes
     Food - FOOD_DES.txt
     Nutrient Definition - NUTR_DEF.txt
     Weight - WEIGHT.txt
     Food Group - FD_GROUP.txt
+    Nutrient Data - NUT_DATA.txt
 
 TODO
-    Nutrient Data - NUT_DATA.txt
 
 BONUS - objects which would be nice to include, but aren't strictly necessary
     LanguaL Factor - LANGUAL.txt

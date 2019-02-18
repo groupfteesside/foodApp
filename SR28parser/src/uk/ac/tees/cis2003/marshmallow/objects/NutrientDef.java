@@ -11,7 +11,7 @@ import static uk.ac.tees.cis2003.marshmallow.util.SR28Helper.*;
  *
  * @author s6115598
  */
-public class Nutrient 
+public class NutrientDef 
 {
     /*
     from NUTR_DEF.txt
@@ -42,7 +42,7 @@ public class Nutrient
     }
     
     // Constructs via a line from NUTR_DEF.txt
-    public Nutrient(String inLine)
+    public NutrientDef(String inLine)
     {
         String[] splitLine = inLine.split(FIELD_DELIMITER);
         id = Integer.parseInt(trimEnds(splitLine[0]));
