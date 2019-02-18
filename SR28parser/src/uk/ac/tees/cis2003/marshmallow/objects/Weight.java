@@ -59,7 +59,7 @@ public class Weight
     public Weight(String inLine)
     {
         String[] splitLine = inLine.split(FIELD_DELIMITER);
-        int foodId = Integer.parseInt(trimEnds(splitLine[0]));
+        String foodId = trimEnds(splitLine[0]);
         /*
         TODO: assign food object based on food ID
         */
