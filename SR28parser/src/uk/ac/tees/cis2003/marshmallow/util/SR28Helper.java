@@ -11,6 +11,8 @@ package uk.ac.tees.cis2003.marshmallow.util;
  */
 public class SR28Helper 
 {
+    public static final String FIELD_DELIMITER = "\\^";
+
     // Returns string with first and last characters removed
     // To help with those bloody annoying tildes
     public static String trimEnds(String s)

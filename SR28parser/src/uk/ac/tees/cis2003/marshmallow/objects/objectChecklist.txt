@@ -1,0 +1,19 @@
+DONE
+    Food - FOOD_DES.txt
+    Nutrient Definition - NUTR_DEF.txt
+    Weight - WEIGHT.txt
+    Food Group - FD_GROUP.txt
+
+TODO
+    Nutrient Data - NUT_DATA.txt
+
+BONUS - objects which would be nice to include, but aren't strictly necessary
+    LanguaL Factor - LANGUAL.txt
+    LanguaL Factor Description - LANGDESC.txt
+
+IGNORE - objects which aren't necessary at all, only to be used if this is expanded into a full-fledged parser
+    Footnote - FOOTNOTE.txt
+    Source Code - SRC_CD.txt
+    Data Derivation Code Description - DERIV_CD.txt
+    Sources of Data Link - DATASRCLN.txt
+    Sources of Data - DATA_SRC.txt

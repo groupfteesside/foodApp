@@ -5,7 +5,7 @@
  */
 package uk.ac.tees.cis2003.marshmallow.objects;
 
-import static uk.ac.tees.cis2003.marshmallow.util.SR28Helper.trimEnds;
+import static uk.ac.tees.cis2003.marshmallow.util.SR28Helper.*;
 
 /**
  *
@@ -13,6 +13,18 @@ import static uk.ac.tees.cis2003.marshmallow.util.SR28Helper.trimEnds;
  */
 public class Nutrient 
 {
+    /*
+    from NUTR_DEF.txt
+        id number
+        units
+        description
+    
+    (currently) cmitted fields
+        tagname
+        decimal places
+        SR order
+    */
+    
     private int id;
     private String units;
     private String description;
@@ -32,7 +44,7 @@ public class Nutrient
     // Constructs via a line from NUTR_DEF.txt
     public Nutrient(String inLine)
     {
-        String[] splitLine = inLine.split("\\^");
+        String[] splitLine = inLine.split(FIELD_DELIMITER);
         id = Integer.parseInt(trimEnds(splitLine[0]));
         units = trimEnds(splitLine[1]);
         description = trimEnds(splitLine[3]);

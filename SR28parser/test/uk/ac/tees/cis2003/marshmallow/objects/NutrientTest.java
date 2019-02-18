@@ -20,7 +20,6 @@ import static org.junit.Assert.*;
 public class NutrientTest {
     
     private static Nutrient testNutrient;
-    private static final String NUTR_DEF = "~100~^~g~^~TST~^~Test Nutrient~^~1~^~234~";
     
     public NutrientTest() {
     }
@@ -28,7 +27,7 @@ public class NutrientTest {
     @BeforeClass
     public static void setUpClass() 
     {
-        testNutrient = new Nutrient(NUTR_DEF);
+        testNutrient = new Nutrient("~100~^~g~^~TST~^~Test Nutrient~^~1~^~234~");
     }
     
     @AfterClass

@@ -5,12 +5,12 @@
  */
 package uk.ac.tees.cis2003.marshmallow.objects;
 
-import static uk.ac.tees.cis2003.marshmallow.util.SR28Helper.trimEnds;
+import static uk.ac.tees.cis2003.marshmallow.util.SR28Helper.*;
 
 /**
  * @author 
  */
-public class Item 
+public class Food 
 {
     /*
     from FOOD_DES.txt
@@ -19,8 +19,17 @@ public class Item
         long description
         short description
         manufacturer
-    from NUT_DATA.txt
-        
+    
+    (currently) omitted fields
+        common name(s)
+        survey
+        refuse description
+        refuse percentage
+        scientific name
+        N factor
+        protein factor
+        fat factor
+        CHO factor
     */
     
     private final int id;
@@ -50,9 +59,9 @@ public class Item
     }
     
     // Construct Item via a line from FOOD_DES.txt
-    public Item(String lineIn)
+    public Food(String lineIn)
     {
-        String[] splitLine = lineIn.split("\\^");
+        String[] splitLine = lineIn.split(FIELD_DELIMITER);
         id = Integer.parseInt(trimEnds(splitLine[0]));
         int groupId = Integer.parseInt(trimEnds(splitLine[1]));
         group = null;

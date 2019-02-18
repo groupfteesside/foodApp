@@ -6,7 +6,7 @@
 package uk.ac.tees.cis2003.marshmallow.objects;
 
 import uk.ac.tees.cis2003.marshmallow.objects.FoodGroup;
-import uk.ac.tees.cis2003.marshmallow.objects.Item;
+import uk.ac.tees.cis2003.marshmallow.objects.Food;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,18 +18,17 @@ import static org.junit.Assert.*;
  *
  * @author s6115598
  */
-public class ItemTest {
+public class FoodTest {
     
-    private static final String FOOD_DESC = "~100~^~12345~^~Test Product~^~TEST PRODUCT~^~~^~Food, inc.~^~~";
-    private static Item testItem;
+    private static Food testItem;
     
-    public ItemTest() {
+    public FoodTest() {
     }
     
     @BeforeClass
     public static void setUpClass() 
     {
-        testItem = new Item(FOOD_DESC);
+        testItem = new Food("~100~^~12345~^~Test Product~^~TEST PRODUCT~^~~^~Food, inc.~^~~");
     }
     
     @AfterClass
