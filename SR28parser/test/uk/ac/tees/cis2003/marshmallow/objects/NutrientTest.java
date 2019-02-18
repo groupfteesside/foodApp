@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package objects;
+package uk.ac.tees.cis2003.marshmallow.objects;
 
+import uk.ac.tees.cis2003.marshmallow.objects.Nutrient;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,18 +17,18 @@ import static org.junit.Assert.*;
  *
  * @author s6115598
  */
-public class FoodGroupTest {
+public class NutrientTest {
     
-    private static final String FD_GROUP = "~100~^~Test Group~";
-    private static FoodGroup testGroup;
+    private static Nutrient testNutrient;
+    private static final String NUTR_DEF = "~100~^~g~^~TST~^~Test Nutrient~^~1~^~234~";
     
-    public FoodGroupTest() {
+    public NutrientTest() {
     }
     
     @BeforeClass
     public static void setUpClass() 
     {
-        testGroup = new FoodGroup(FD_GROUP);
+        testNutrient = new Nutrient(NUTR_DEF);
     }
     
     @AfterClass
@@ -43,23 +44,34 @@ public class FoodGroupTest {
     }
 
     /**
-     * Test of getId method, of class FoodGroup.
+     * Test of getId method, of class Nutrient.
      */
     @Test
     public void testGetId() {
         int expResult = 100;
-        int result = testGroup.getId();
+        int result = testNutrient.getId();
         assertEquals(expResult, result);
     }
 
     /**
-     * Test of getDescription method, of class FoodGroup.
+     * Test of getUnits method, of class Nutrient.
+     */
+    @Test
+    public void testGetUnits() {
+        String expResult = "g";
+        String result = testNutrient.getUnits();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of getDescription method, of class Nutrient.
      */
     @Test
     public void testGetDescription() {
-        String expResult = "Test Group";
-        String result = testGroup.getDescription();
+        String expResult = "Test Nutrient";
+        String result = testNutrient.getDescription();
         assertEquals(expResult, result);
     }
+
     
 }

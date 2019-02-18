@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package objects;
+package uk.ac.tees.cis2003.marshmallow.objects;
 
-import static objects.SR28Helper.trimField;
+import static uk.ac.tees.cis2003.marshmallow.util.SR28Helper.trimEnds;
 
 /**
  *
@@ -28,7 +28,7 @@ public class FoodGroup
     public FoodGroup(String inLine)
     {
         String[] splitLine = inLine.split("\\^");
-        id = Integer.parseInt(trimField(splitLine[0]));
-        description = trimField(splitLine[1]);
+        id = Integer.parseInt(trimEnds(splitLine[0]));
+        description = trimEnds(splitLine[1]);
     }
 }

@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package objects;
+package uk.ac.tees.cis2003.marshmallow.objects;
 
+import uk.ac.tees.cis2003.marshmallow.objects.FoodGroup;
+import uk.ac.tees.cis2003.marshmallow.objects.Item;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

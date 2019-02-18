@@ -3,9 +3,9 @@
  * 
  * Represents a single item in the SR28 database, containing all data pertaining to it
  */
-package objects;
+package uk.ac.tees.cis2003.marshmallow.objects;
 
-import static objects.SR28Helper.trimField;
+import static uk.ac.tees.cis2003.marshmallow.util.SR28Helper.trimEnds;
 
 /**
  * @author 
@@ -53,14 +53,14 @@ public class Item
     public Item(String lineIn)
     {
         String[] splitLine = lineIn.split("\\^");
-        id = Integer.parseInt(trimField(splitLine[0]));
-        int groupId = Integer.parseInt(trimField(splitLine[1]));
+        id = Integer.parseInt(trimEnds(splitLine[0]));
+        int groupId = Integer.parseInt(trimEnds(splitLine[1]));
         group = null;
         /*
         TODO: use groupId to find and set FoodGroup object
         */
-        longDesc = trimField(splitLine[2]);
-        shortDesc = trimField(splitLine[3]);
-        manufacturer = trimField(splitLine[5]);
+        longDesc = trimEnds(splitLine[2]);
+        shortDesc = trimEnds(splitLine[3]);
+        manufacturer = trimEnds(splitLine[5]);
     }
 }

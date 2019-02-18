@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package objects;
+package uk.ac.tees.cis2003.marshmallow.util;
 
 /**
  *
@@ -13,7 +13,7 @@ public class SR28Helper
 {
     // Returns string with first and last characters removed
     // To help with those bloody annoying tildes
-    public static String trimField(String s)
+    public static String trimEnds(String s)
     {
         if (s.length() > 2) return s.substring(1, s.length()-1);
         else return "";
