@@ -3,12 +3,16 @@
  * All objects should register with it upon construction
  * Any duplicate IDs will overwrite the old reference
  */
-package managers;
+package uk.ac.tees.cis2003.marshmallow.sr28parser.managers;
 
+import uk.ac.tees.cis2003.marshmallow.sr28parser.objects.NutrientDef;
+import uk.ac.tees.cis2003.marshmallow.sr28parser.objects.FoodGroup;
+import uk.ac.tees.cis2003.marshmallow.sr28parser.objects.Food;
+import uk.ac.tees.cis2003.marshmallow.sr28parser.objects.Weight;
+import uk.ac.tees.cis2003.marshmallow.sr28parser.objects.NutrientDatum;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
-import uk.ac.tees.cis2003.marshmallow.objects.*;
 
 public class ObjectManager
 {
