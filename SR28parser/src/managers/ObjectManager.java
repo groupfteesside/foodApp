@@ -5,22 +5,20 @@
  */
 package managers;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 import uk.ac.tees.cis2003.marshmallow.objects.*;
 
-/**
- * @author s6115598
- */
 public class ObjectManager
 {
     private static ObjectManager singleton;
     
     private HashMap<Integer, Food> foodMap; 
     private HashMap<Integer, FoodGroup> foodGroupMap; 
-    private HashMap<String, NutrientDatum> nutrientDatumMap; 
+    private HashMap<CompoundKeyPair<Integer, Integer>, NutrientDatum> nutrientDatumMap; 
     private HashMap<Integer, NutrientDef> nutrientDefMap; 
-    private HashMap<String, Weight> weightMap; 
+    private HashMap<CompoundKeyPair<Integer, Integer>, Weight> weightMap; 
     
     private ObjectManager()
     {
@@ -46,24 +44,79 @@ public class ObjectManager
     
     public void registerFoodGroup(FoodGroup fg)
     {
+        foodGroupMap.put(fg.getId(), fg);
+    }
+    
+    public void registerNutrientDatum(NutrientDatum nut)
+    {
+        int foodId = nut.getFood().getId();
+        int nutId = nut.getNutrient().getId();
+        CompoundKeyPair<Integer, Integer> kp = new CompoundKeyPair<>(foodId, nutId);
+        nutrientDatumMap.put(kp, nut);
+    }
+    
+    public void registerNutrientDef(NutrientDef nut)
+    {
+        nutrientDefMap.put(nut.getId(), nut);
+    }
+    
+    public void registerWeight(Weight wt)
+    {
+        int foodId = wt.getFood().getId();
+        int seq = wt.getSeq();
+        CompoundKeyPair<Integer, Integer> kp = new CompoundKeyPair<>(foodId, seq);
+        weightMap.put(kp, wt);
+    }
+
+    public Food getFoodById(int id)
+    {
+        return foodMap.get(id);
+    }
+    
+    public FoodGroup getFoodGroupById(int id)
+    {
+        return foodGroupMap.get(id);
+    }
+    
+    public NutrientDatum[] getNutrientDataByFoodId(int id)
+    {
+        ArrayList<NutrientDatum> returnArray = new ArrayList<>();
+        nutrientDatumMap.forEach((k, v) -> 
+        {
+            if (k.getA() == id)
+            {
+                returnArray.add(v);
+            }
+        });
         
+        return (NutrientDatum[]) returnArray.toArray();
     }
 }
 
-class KeyPair<A, B>
+class CompoundKeyPair<A, B>
 {
     A a;
     B b;
     
-    public KeyPair(A a, B b)
+    public CompoundKeyPair(A a, B b)
     {
        this.a = a;
        this.b = b;
     }
 
+    public A getA() {
+        return a;
+    }
+
+    public B getB() {
+        return b;
+    }
+
     @Override
     public boolean equals(Object obj)
     {
+        if (obj == null) return false; 
+        if (obj.getClass() != CompoundKeyPair.class) return false;
         return (obj.hashCode() == this.hashCode());
     }
 
