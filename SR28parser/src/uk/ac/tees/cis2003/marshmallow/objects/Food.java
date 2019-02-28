@@ -1,15 +1,7 @@
-/*
- * Temporary name - I apologies
- * 
- * Represents a single item in the SR28 database, containing all data pertaining to it
- */
 package uk.ac.tees.cis2003.marshmallow.objects;
 
 import static uk.ac.tees.cis2003.marshmallow.util.SR28Helper.*;
 
-/**
- * @author 
- */
 public class Food 
 {
     /*

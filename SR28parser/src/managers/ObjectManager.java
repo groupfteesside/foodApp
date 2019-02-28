@@ -17,7 +17,7 @@ public class ObjectManager
     private HashMap<Integer, Food> foodMap; 
     private HashMap<Integer, FoodGroup> foodGroupMap; 
     private HashMap<CompoundKeyPair<Integer, Integer>, NutrientDatum> nutrientDatumMap; 
-    private HashMap<Integer, NutrientDef> nutrientDefMap; 
+    private HashMap<Integer, NutrientDef> nutrientDefMap;
     private HashMap<CompoundKeyPair<Integer, Integer>, Weight> weightMap; 
     
     private ObjectManager()
@@ -90,6 +90,45 @@ public class ObjectManager
         });
         
         return (NutrientDatum[]) returnArray.toArray();
+    }
+    
+    /**
+    * Constructs a new Food object from a line of FOOD_DES.txt and registers it
+    * @return Food The created object
+    */
+    public Food newFoodFromLine(String inLine)
+    {
+        Food food = new Food(inLine);
+        getObjectManager().registerFood(food);
+        return food;
+    }
+
+    public FoodGroup newFoodGroupFromLine(String inLine)
+    {
+        FoodGroup fg = new FoodGroup(inLine);
+        getObjectManager().registerFoodGroup(fg);
+        return fg;
+    }
+    
+    public NutrientDatum newNutrientDatumFromLine(String inLine)
+    {
+        NutrientDatum nut = new NutrientDatum(inLine);
+        getObjectManager().registerNutrientDatum(nut);
+        return nut;
+    }
+    
+    public NutrientDef newNutrientDefFromLine(String inLine)
+    {
+        NutrientDef nut = new NutrientDef(inLine);
+        getObjectManager().registerNutrientDef(nut);
+        return nut;
+    }
+    
+    public Weight newWeightFromLine(String inLine)
+    {
+        Weight wt = new Weight(inLine);
+        getObjectManager().registerWeight(wt);
+        return wt;
     }
 }
 

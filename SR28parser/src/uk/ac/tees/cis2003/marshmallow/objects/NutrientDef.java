@@ -7,10 +7,6 @@ package uk.ac.tees.cis2003.marshmallow.objects;
 
 import static uk.ac.tees.cis2003.marshmallow.util.SR28Helper.*;
 
-/**
- *
- * @author s6115598
- */
 public class NutrientDef 
 {
     /*

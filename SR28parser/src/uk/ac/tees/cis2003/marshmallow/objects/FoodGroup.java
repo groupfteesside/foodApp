@@ -1,16 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package uk.ac.tees.cis2003.marshmallow.objects;
 
 import static uk.ac.tees.cis2003.marshmallow.util.SR28Helper.trimEnds;
 
-/**
- *
- * @author s6115598
- */
 public class FoodGroup 
 {
     private int id;
